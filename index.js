@@ -1,6 +1,6 @@
 const searchInput = document.querySelector("input");
 const list = document.querySelector(".list");
-const orgName = document.querySelector(".output");
+const error = document.querySelector(".output");
 const clearBtn = document.querySelector("#clear");
 searchInput.addEventListener("input", checkValue);
 
@@ -9,7 +9,7 @@ function checkValue(e) {
   // input value
   let acronym = e.target.value.toLowerCase();
   // clearing previous results
-  orgName.innerHTML = "";
+  error.innerHTML = "";
   list.innerHTML = "";
   //
   if (e.target.value.length > 0) {
@@ -24,7 +24,7 @@ function checkValue(e) {
 function showAcronyms(results) {
   list.innerHTML = "";
   if (results.length === 0) {
-    orgName.innerHTML = "No matches for this search";
+    error.innerHTML = "No matches for this search";
   } else {
     for (const org of results) {
       // creating a li element for each result item
@@ -53,7 +53,12 @@ function showName(result) {
   orgs.forEach(function (arrayItem) {
     const acr = arrayItem.acr;
     if (result == acr) {
-      orgName.innerHTML = arrayItem.name;
+      const selected = document.createElement("span");
+      const text = document.createTextNode(arrayItem.name);
+      selected.appendChild(text);
+      const listItem = document.getElementById(result);
+      listItem.appendChild(selected);
+      // error.innerHTML = arrayItem.name;
       searchInput.value = arrayItem.acr;
     }
   });
@@ -70,7 +75,6 @@ const onEnter = (event) => {
 };
 
 clearBtn.addEventListener("click", () => {
-  orgName.innerHTML = "";
+  error.innerHTML = "";
   list.innerHTML = "";
-  searchInput.value = "";
 });

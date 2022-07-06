@@ -6,19 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UK Government acronym search</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <form role="search">
-        <input id="search" type="search" name="q" placeholder="search..." aria-label="UK Government acronym search">
-        <button>Search</button>
-    </form>
+    <header>
+        <h1>UK Government acronym search</h1>
+    </header>
+    <section class="container">
 
-    <div>
+        <form role="search">
+            <input id="search" type="text" placeholder="search..." aria-label="UK Government acronym search">
+            <button type="reset" id="clear">Clear</button>
+        </form>
+
+        <p class="output"></p>
         <ul class="list"></ul>
-        <h2 class="output"></h2>
-    </div>
 
+    </section>
     <script src="data.js"></script>
     <script src="index.js"></script>
 </body>

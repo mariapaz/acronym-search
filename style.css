@@ -1,0 +1,55 @@
+body {
+  font-family: arial, sans-serif;
+  color: #4e4e4e;
+  margin: 0;
+}
+body > * {
+  padding: 2rem;
+}
+.container {
+  max-width: 1024px;
+  margin: auto;
+  /* padding: 2rem; */
+}
+li:focus,
+input:focus,
+button:focus {
+  background-color: yellow;
+}
+h1 {
+  text-align: center;
+}
+input,
+button {
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  background: #f3f2f1;
+}
+header {
+  background: #1d70b8;
+  color: white;
+}
+ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  /* background: #f3f2f1; */
+}
+ul li {
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+}
+
+ul > li + li {
+  border-top: solid;
+}
+li {
+  display: flex;
+  /* position: relative; */
+}
+li span {
+  /* display: inline-block; */
+  width: 100%;
+  margin-left: 1rem;
+  /* position: absolute; */
+}
